@@ -9,10 +9,6 @@ var FONT_OFFSET = 250;
 var CLOUD_X = 130;
 var CLOUD_Y = 240;
 
-var getRandomInteger = function (min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 var getMaxElement = function (array) {
   var maxElement = array[0];
   for (var i = 1; i < array.length; i++) {
@@ -38,7 +34,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, 0.' + getRandomInteger(1, 9) + ')';
+      ctx.fillStyle = 'rgba(0, 0, 255, 0.' + window.getRandomInteger(1, 9) + ')';
     }
     ctx.fillRect(CLOUD_X + (BAR_WIDTH + GAP) * i, CLOUD_Y - (BAR_HEIGHT * times[i]) / maxTime, BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
     ctx.fillStyle = '#000';
